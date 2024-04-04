@@ -39,6 +39,10 @@ class className {
     {
         System.out.println("className init block");
     }
+
+    public static void main(String[] args) {
+
+    }
 }
 
 class Fun{
