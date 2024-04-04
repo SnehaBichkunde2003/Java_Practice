@@ -19,6 +19,9 @@ class ExceptionHandelling{
         {
             System.out.println("Exception has occored");
         }
+        finally {
+            System.out.println("inside the finally block");
+        }
         //System.out.println(args[0]);
     }
 }
