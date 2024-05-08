@@ -41,7 +41,10 @@ class className {
     }
 
     public static void main(String[] args) {
-
+        className obj = new className();
+        insideClass obj2 = obj.new insideClass();
+        System.out.println(obj);
+        System.out.println(obj2);
     }
 }
 

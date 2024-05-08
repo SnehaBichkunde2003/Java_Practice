@@ -5,7 +5,7 @@ interface Voter{
 }
 
 interface EC{
-    void checkValidityOfVoter(int age)throws Exception;
+    void checkValidityOfVoter(int age)throws myException;
 }
 
 class ECIndia implements Voter, EC{
@@ -16,7 +16,7 @@ class ECIndia implements Voter, EC{
     }
 
     public void castVote(){}
-    public void checkValidityOfVoter(int age){
+    public void checkValidityOfVoter(int age)throws myException{
         if(age<minAge){
             throw new myException("Invalid Age");
         }
@@ -27,12 +27,10 @@ class ECBrazile implements Voter, EC{
     public ECBrazile(){}
     public void castVote(){}
     public void checkValidityOfVoter(int age){}
-
-
 }
 
 class InterfacesAndException {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws myException {
         ECIndia obj = new ECIndia(18);
         obj.checkValidityOfVoter(24);
         obj.checkValidityOfVoter(4);
@@ -41,7 +39,7 @@ class InterfacesAndException {
     }
 }
 
-class myException extends RuntimeException{
+class myException extends Exception{
     myException(String error){
         super(error);
     }
